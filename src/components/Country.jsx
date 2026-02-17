@@ -25,7 +25,7 @@ const Country = ({ darkMode }) => {
       {/* BACK BUTTON */}
       <Link
         to={"/"}
-        className={`flex items-center gap-3 px-8 py-2 rounded-md shadow-[0_0_8px_rgba(0,0,0,0.15)] mb-16 md:mb-20 hover:opacity-80 transition-opacity ${darkMode ? "bg-[#2b3945]" : "bg-white"}`}
+        className={`flex items-center gap-3 px-8 py-2 rounded-md shadow-[0_0_8px_rgba(0,0,0,0.15)] mb-16 md:mb-20 hover:opacity-80 transition-opacity ${darkMode ? "bg-white" : "bg-[#2b3945]"}`}
       >
         <ArrowLeft size={18} />
         <span className="text-sm font-medium">Back</span>
@@ -51,11 +51,11 @@ const Country = ({ darkMode }) => {
             <div className="space-y-3">
               <p className="text-sm">
                 <span className="font-semibold">Native Name:</span>{" "}
-                {countryDetails.nativeName}
+                {/* {countryDetails.nativeName} */}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Population:</span>{" "}
-                {countryDetails.population}
+                {countryDetails.population.toLocaleString()}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Region:</span>{" "}
@@ -75,15 +75,15 @@ const Country = ({ darkMode }) => {
             <div className="space-y-3">
               <p className="text-sm">
                 <span className="font-semibold">Top Level Domain:</span>{" "}
-                {countryDetails.topLevelDomain}
+                {countryDetails.tld[0]}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Currencies:</span>{" "}
-                {countryDetails.currencies}
+                {Object.values(countryDetails.currencies)[0]?.name}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Languages:</span>{" "}
-                {countryDetails.languages}
+                {/* {countryDetails.languages} */}
               </p>
             </div>
           </div>
@@ -97,7 +97,7 @@ const Country = ({ darkMode }) => {
               {countryDetails.borders.map((border, idx) => (
                 <span
                   key={idx}
-                  className={`px-6 py-1 text-sm shadow-[0_0_4px_rgba(0,0,0,0.2)] rounded-sm cursor-pointer hover:opacity-70 ${darkMode ? "bg-[#2b3945]" : "bg-white"}`}
+                  className={`px-6 py-1 text-sm shadow-[0_0_4px_rgba(0,0,0,0.2)] rounded-sm cursor-pointer hover:opacity-70 ${darkMode ? "bg-white" : "bg-[#2b3945]"}`}
                 >
                   {border}
                 </span>

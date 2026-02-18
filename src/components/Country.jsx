@@ -51,7 +51,7 @@ const Country = ({ darkMode }) => {
             <div className="space-y-3">
               <p className="text-sm">
                 <span className="font-semibold">Native Name:</span>{" "}
-                {/* {countryDetails.nativeName} */}
+                {Object.values(countryDetails.name.nativeName)[0]?.official}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Population:</span>{" "}
@@ -63,7 +63,7 @@ const Country = ({ darkMode }) => {
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Sub Region:</span>{" "}
-                {countryDetails.subRegion}
+                {countryDetails.subregion}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Capital:</span>{" "}
@@ -79,11 +79,14 @@ const Country = ({ darkMode }) => {
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Currencies:</span>{" "}
-                {Object.values(countryDetails.currencies)[0]?.name}
+                {Object.values(countryDetails.currencies)[0]
+                  ?.name.charAt(0)
+                  .toUpperCase() +
+                  Object.values(countryDetails.currencies)[0]?.name.slice(1)}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Languages:</span>{" "}
-                {/* {countryDetails.languages} */}
+                {Object.values(countryDetails.languages).join(", ")}
               </p>
             </div>
           </div>
@@ -94,14 +97,18 @@ const Country = ({ darkMode }) => {
               Border Countries:
             </span>
             <div className="flex flex-wrap gap-3">
-              {countryDetails.borders.map((border, idx) => (
-                <span
-                  key={idx}
-                  className={`px-6 py-1 text-sm shadow-[0_0_4px_rgba(0,0,0,0.2)] rounded-sm cursor-pointer hover:opacity-70 ${darkMode ? "bg-white" : "bg-[#2b3945]"}`}
-                >
-                  {border}
-                </span>
-              ))}
+              {countryDetails.borders ? (
+                countryDetails.borders.map((border, idx) => (
+                  <span
+                    key={idx}
+                    className={`px-6 py-1 text-sm shadow-[0_0_4px_rgba(0,0,0,0.2)] rounded-sm cursor-pointer hover:opacity-70 ${darkMode ? "bg-white" : "bg-[#2b3945]"}`}
+                  >
+                    {border}
+                  </span>
+                ))
+              ) : (
+                <span className="text-sm">Unknown</span>
+              )}
             </div>
           </div>
         </div>

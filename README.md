@@ -6,7 +6,7 @@
 
 > A responsive web application that integrates with the REST Countries API to display comprehensive information about countries across the globe, featuring a theme switcher, dynamic search, and advanced filtering.
 
-<a href="" target="_blank"><strong>➥ Live Demo</strong></a>
+<a href="https://amine4jh.github.io/countries-api-react/" target="_blank"><strong>➥ Live Demo</strong></a>
 
 </div>
 

@@ -16,11 +16,11 @@
 
 |             Dark Mode Home             |             Light Mode Home              |
 | :------------------------------------: | :--------------------------------------: |
-| ![Dark Mode Home](public/darkHome.jpg) | ![Light Mode Home](public/lightHome.jpg) |
+| ![Dark Mode Home](public/darkHome.png) | ![Light Mode Home](public/lightHome.png) |
 
 |              Dark Mode Details               |               Light Mode Details               |
 | :------------------------------------------: | :--------------------------------------------: |
-| ![Dark Mode Details](public/darkDetails.jpg) | ![Light Mode Details](public/lightDetails.jpg) |
+| ![Dark Mode Details](public/darkDetails.png) | ![Light Mode Details](public/lightDetails.png) |
 
 ---
 

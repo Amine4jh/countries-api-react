@@ -33,6 +33,9 @@ const AllCountries = () => {
       : item.name.common.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  // Remove no-countries
+  filteredCountries = filteredCountries?.filter((item) => item.ccn3 !== "376");
+
   // Calculate pagination details
   const totalItems = filteredCountries?.length || 0;
   const totalPages = Math.ceil(totalItems / page.limit) || 1;

@@ -18,13 +18,13 @@ const Header = () => {
       >
         {darkMode ? (
           <>
-            <Moon size={16} className="fill-current" />
-            Dark Mode
+            <Sun size={16} className="fill-current" />
+            Light Mode
           </>
         ) : (
           <>
-            <Sun size={16} />
-            Light Mode
+            <Moon size={16} />
+            Dark Mode
           </>
         )}
       </button>

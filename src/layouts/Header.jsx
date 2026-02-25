@@ -1,24 +1,32 @@
 import { Moon, Sun } from "lucide-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../App";
 
-const Header = ({ darkMode, toggleTheme }) => {
+const Header = () => {
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
     <header
       className={`px-4 py-6 md:px-16 md:py-6 shadow-md flex justify-between items-center relative z-20 ${darkMode ? "bg-[#2b3945]" : "bg-white"}`}
     >
       <h1 className="font-extrabold text-sm md:text-xl lg:text-2xl cursor-pointer">
-        <Link to={"/home"}>Where in the world?</Link>
+        <Link to={"/"}>Where in the world?</Link>
       </h1>
       <button
-        onClick={toggleTheme}
+        onClick={() => setDarkMode(!darkMode)}
         className="flex items-center gap-2 font-semibold text-xs md:text-sm hover:opacity-80 transition-opacity cursor-pointer"
       >
         {darkMode ? (
-          <Moon size={16} className="fill-current" />
+          <>
+            <Moon size={16} className="fill-current" />
+            Dark Mode
+          </>
         ) : (
-          <Sun size={16} />
+          <>
+            <Sun size={16} />
+            Light Mode
+          </>
         )}
-        Dark Mode
       </button>
     </header>
   );

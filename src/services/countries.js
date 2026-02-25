@@ -12,10 +12,6 @@ export const fetchCountries = async () => {
   return response.data;
 };
 
-export const fetchCountryByName = async (countryName) => {
-  return await apiClient.get(`/name/${countryName}`);
-};
-
 export const fetchCountryByAlphaCode = async (countryAlphaCode) => {
   const response = await apiClient.get(`/alpha/${countryAlphaCode}`);
   return response.data[0];

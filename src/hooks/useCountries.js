@@ -1,23 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import {
-  fetchCountries,
-  fetchCountryByAlphaCode,
-  fetchCountryByName,
-} from "../services/countries";
+import { fetchCountries, fetchCountryByAlphaCode } from "../services/countries";
 
 export const useCountries = () => {
   return useQuery({
     queryKey: ["countries"],
     queryFn: fetchCountries,
-    // staleTime: 1000 * 60 * 5,
-  });
-};
-
-export const useCountrySearch = (searchTerm) => {
-  return useQuery({
-    queryKey: ["searchedCountries", "search", searchTerm],
-    queryFn: () => fetchCountryByName(searchTerm),
-    enabled: !!searchTerm,
   });
 };
 

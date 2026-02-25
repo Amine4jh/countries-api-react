@@ -18,7 +18,7 @@ const Header = () => {
       >
         {darkMode ? (
           <>
-            <Sun size={16} className="fill-current" />
+            <Sun size={16} />
             Light Mode
           </>
         ) : (

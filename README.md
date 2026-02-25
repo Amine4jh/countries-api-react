@@ -1,16 +1,108 @@
-# React + Vite
+<div align="center">
+<h1 align="center">Where in the World? 🌍 - REST Countries Explorer</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-Currently, two official plugins are available:
+> A responsive web application that integrates with the REST Countries API to display comprehensive information about countries across the globe, featuring a theme switcher, dynamic search, and advanced filtering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<a href="" target="_blank"><strong>➥ Live Demo</strong></a>
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<br />
 
-## Expanding the ESLint configuration
+### Demo Screeshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+|             Dark Mode Home             |             Light Mode Home              |
+| :------------------------------------: | :--------------------------------------: |
+| ![Dark Mode Home](public/darkHome.jpg) | ![Light Mode Home](public/lightHome.jpg) |
+
+|              Dark Mode Details               |               Light Mode Details               |
+| :------------------------------------------: | :--------------------------------------------: |
+| ![Dark Mode Details](public/darkDetails.jpg) | ![Light Mode Details](public/lightDetails.jpg) |
+
+---
+
+## ✨ Features
+
+- **Global Catalog:** Fetch and display a comprehensive list of countries with robust **pagination** to handle large datasets smoothly.
+- **Smart Search:** Instantly search for any country by its common name using the dynamic input field.
+- **Region Filtering:** Filter the dashboard by specific geographic regions (Africa, Americas, Asia, Europe, Oceania) using a custom dropdown menu.
+- **In-Depth Details:** Click on any country card to view a dedicated details page containing native names, population, domains, currencies, languages, and clickable border countries.
+- **Theme Switcher:** Seamlessly toggle between custom Light and Dark modes to suit user preferences and reduce eye strain.
+- **Optimized Performance:** Utilizes TanStack Query for efficient API data fetching, caching, and background synchronization, ensuring a snappy user experience without unnecessary loading states.
+
+## 🛠️ Technologies Used
+
+- **Frontend Framework:** [React](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Data Fetching & State:** [TanStack Query](https://tanstack.com/query/latest)
+- **HTTP Client:** [Axios](https://axios-http.com/)
+- **Countries API** [Rest Countries](https://restcountries.com)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally on your machine.
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/Amine4jh/countries-api-react.git
+    cd countries-api-react
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+4.  Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+---
+
+<!-- ## ⚙️ Configuration
+
+1.  Create a `.env` file in the root directory.
+2.  Add your OpenWeather Token:
+    ```env
+    VITE_WEATHER_API_KEY=your_token_here
+    VITE_WEATHER_BASE_URL=https://api.openweathermap.org/data/2.5/
+    VITE_GEO_BASE_URL=http://api.openweathermap.org/geo/1.0/
+    ```
+
+--- -->
+
+## 👤 Author
+
+**Amine Ajaha**
+
+GitHub: @Amine4jh
+
+LinkedIn: [Amine Ajaha](https://www.linkedin.com/in/amineajaha/)
+
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License.

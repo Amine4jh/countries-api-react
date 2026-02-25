@@ -121,7 +121,7 @@ const AllCountries = () => {
         >
           <Search
             size={20}
-            className={darkMode ? "text-gray-400" : "text-white"}
+            className={darkMode ? "text-gray-400" : "text-black"}
           />
           <input
             value={searchTerm}

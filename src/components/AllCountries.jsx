@@ -36,6 +36,11 @@ const AllCountries = () => {
   // Remove no-countries
   filteredCountries = filteredCountries?.filter((item) => item.ccn3 !== "376");
 
+  // Sort by alpha
+  filteredCountries = filteredCountries?.sort((a, b) =>
+    a.name.common.localeCompare(b.name.common),
+  );
+
   // Calculate pagination details
   const totalItems = filteredCountries?.length || 0;
   const totalPages = Math.ceil(totalItems / page.limit) || 1;

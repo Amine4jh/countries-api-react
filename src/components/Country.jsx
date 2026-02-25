@@ -1,6 +1,6 @@
-import { ArrowLeft } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
-import { useCountryDetails } from "../hooks/useCountries";
+import { ArrowLeft, UndoIcon } from "lucide-react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useCountries, useCountryDetails } from "../hooks/useCountries";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
@@ -8,12 +8,21 @@ const Country = () => {
   const { darkMode } = useContext(ThemeContext);
   const { id } = useParams();
 
+  const navigate = useNavigate();
+
   const {
     data: countryDetails,
     isLoading,
     isError,
     error,
   } = useCountryDetails(id);
+
+  // find borders names
+  const { data: countries } = useCountries(id);
+  let bordersNames = countryDetails?.borders.map((item) =>
+    countries?.find((country) => country.cca3 === item),
+  );
+  bordersNames = bordersNames?.filter((item) => item !== undefined); // Fix: remove no countries
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -101,12 +110,13 @@ const Country = () => {
             </span>
             <div className="flex flex-wrap gap-3">
               {countryDetails.borders ? (
-                countryDetails.borders.map((border, idx) => (
+                bordersNames.map((border) => (
                   <span
-                    key={idx}
+                    key={border?.cca3}
+                    onClick={() => navigate(`/country/${border?.ccn3}`)}
                     className={`px-6 py-1 text-sm shadow-[0_0_4px_rgba(0,0,0,0.2)] rounded-sm cursor-pointer hover:opacity-70 ${darkMode ? "bg-[#2b3945]" : "bg-white"}`}
                   >
-                    {border}
+                    {border?.name?.common}
                   </span>
                 ))
               ) : (
